@@ -6,8 +6,15 @@ for (i = 0; i < 16; i++) {
     row.classList.add("row");
     container.appendChild(row);
     for (j = 0; j < 16; j++) {
-        const col = document.createElement("div");
-        col.classList.add("col");
-        row.appendChild(col);
+        const square = document.createElement("div");
+        square.classList.add("square");
+        row.appendChild(square);
     }
 }
+
+const squares = document.querySelectorAll(".square");
+squares.forEach((square) => {
+    square.addEventListener("pointerenter", () => {
+        square.style.backgroundColor = "black";
+    });
+});
